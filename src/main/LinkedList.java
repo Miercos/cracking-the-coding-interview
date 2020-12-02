@@ -1,3 +1,4 @@
+package main;
 /**
  * LinkedList represents a singly-linked list
  * @author Marcos
