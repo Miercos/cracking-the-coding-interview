@@ -5,7 +5,8 @@ package main;
  *
  */
 public class LinkedList<T> {
-	private Node head;
+	// normally, head wouldn't be public but we need access to it when writing our algorithms
+	public Node head;
 	
 	public LinkedList() {
 		head = null;
@@ -18,20 +19,41 @@ public class LinkedList<T> {
 		else {
 			// reach last position in list (node.next = null)
 			Node n = head;
+			
 			while(n.next != null) {
 				n = n.next;
 			}
+			
 			n.next = new Node(t);
 		}
 	}
 	
 	public void print() {
 		Node n = head;
-		while(n.next != null) {
-			System.out.print(n.data + " -> ");
+		
+		while(n != null) {
+			if(n.next != null)
+				System.out.print(n.data + " -> ");
+			else
+				System.out.println(n.data + "\n");
 			n = n.next;
 		}
-		System.out.print(n.data + "\n");
+	}
+	
+	public String toString() {
+		String retString = "";
+		
+		Node n = head;
+		
+		while(n != null) {
+			if(n.next != null)
+				retString += n.data + " -> ";
+			else
+				retString += n.data;
+			n = n.next;
+		}
+		
+		return retString;
 	}
 	
 	class Node {
