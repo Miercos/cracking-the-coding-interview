@@ -6,9 +6,17 @@ public class Main {
 		LinkedList<Integer> ll = new LinkedList<Integer>();
 		ll.print();
 		ll.add(1);
+		ll.add(1);
 		ll.add(2);
+		ll.add(1);
 		ll.add(3);
 		ll.add(4);
+		ll.add(1);
+		
+		ll.print();
+		
+		LinkedListProblemSet.removeDups(ll.head, 1);
+		
 		ll.print();
 	}
 

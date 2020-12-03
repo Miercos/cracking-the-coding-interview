@@ -27,6 +27,8 @@ public class LinkedListProblemSetTest {
 		
 		LinkedListProblemSet.removeDups(ll.head, 1);
 		
+		ll.print();
+		
 		assertEquals("1 -> 2 -> 3 -> 4", ll.toString());
 	}
 
