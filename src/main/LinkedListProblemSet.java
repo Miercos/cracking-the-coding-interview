@@ -2,27 +2,30 @@ package main;
 import main.LinkedList.Node;
 
 public class LinkedListProblemSet {
-	// my life would be easier if we weren't dealing with generic types
-	public static <T> void removeDups(Node head, T element) {
-		Node n = head;
-		Node prev = null;
-		boolean hasDup = false;
+	// what if we're storing Strings? Will the comparison still work?
+	public static <T> void removeDups(Node head) {
+		Node m = head;
+		boolean hasDuplicate;
 		
-		while(n != null) {
-			// what if we're comparing Strings?
-			if(n.data == element) {
-				if(hasDup) {
-					//remove
-					prev.next = n.next;
+		while(m != null) {
+			hasDuplicate = false;
+			Node n = m;
+			Node prev = null;
+			
+			while(n != null) {
+				if(m.data == n.data) {
+					if(hasDuplicate) {
+						prev.next = n.next;
+					}
+					else {
+						hasDuplicate = true;
+					}
 				}
-				else {
-					hasDup = true;
-				}
-			}
-			// update previous if a duplicate was not removed or previous is not set
-			if(prev == null || prev.next != n.next)
-				prev = n;
-			n = n.next;
+				if(prev == null || prev.next != n.next)
+					prev = n;
+				n = n.next;
+			}	
+			m = m.next;
 		}
 	}
 }

@@ -12,10 +12,15 @@ public class Main {
 		ll.add(3);
 		ll.add(4);
 		ll.add(1);
+		ll.add(2);
+		ll.add(1);
+		ll.add(3);
+		ll.add(4);
+		ll.add(1);
 		
 		ll.print();
 		
-		LinkedListProblemSet.removeDups(ll.head, 1);
+		LinkedListProblemSet.removeDups(ll.head);
 		
 		ll.print();
 	}
