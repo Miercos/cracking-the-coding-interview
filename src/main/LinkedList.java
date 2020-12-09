@@ -7,9 +7,11 @@ package main;
 public class LinkedList<T> {
 	// normally, head wouldn't be public but we need access to it when writing our algorithms
 	public Node head;
+	private int size;
 	
 	public LinkedList() {
 		head = null;
+		size = 0;
 	}
 	
 	public void add(T t) {
@@ -26,6 +28,11 @@ public class LinkedList<T> {
 			
 			n.next = new Node(t);
 		}
+		size++;
+	}
+	
+	public int size() {
+		return size;
 	}
 	
 	public void print() {

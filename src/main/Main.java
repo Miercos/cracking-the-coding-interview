@@ -20,9 +20,11 @@ public class Main {
 		
 		ll.print();
 		
-		LinkedListProblemSet.removeDups(ll.head);
+		LinkedListProblemSet.removeDupsRevised(ll.head);
 		
 		ll.print();
+		
+		//System.out.println(LinkedListProblemSet.kthToLast(ll.head, ll.size(), 2));
 	}
 
 }
