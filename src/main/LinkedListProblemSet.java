@@ -2,7 +2,8 @@ package main;
 import main.LinkedList.Node;
 
 public class LinkedListProblemSet {
-	// what if we're storing Strings? Will the comparison still work?
+	// a few things to note about this algorithm: 
+	// (1) only works for objects where the comparison operator is supported
 	public static void removeDups(Node head) {
 		Node n = head;
 		while(n != null) {
@@ -19,11 +20,11 @@ public class LinkedListProblemSet {
 	}
 	
 	// are we given access to the length of the list?
-	public static <T> T kthToLast(Node head, int size, int k){
+	public static int kthToLast(Node head, int size, int k){
 		Node n = head;
 		for(int i = 1; i < size - k; i++) {
 			n = n.next;
 		}
-		return (T)n.data;
+		return n.data;
 	}
 }
