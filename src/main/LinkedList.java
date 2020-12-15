@@ -4,19 +4,17 @@ package main;
  * @author Marcos
  *
  */
-public class LinkedList<T> {
+public class LinkedList{
 	// normally, head wouldn't be public but we need access to it when writing our algorithms
 	public Node head;
-	private int size;
 	
 	public LinkedList() {
 		head = null;
-		size = 0;
 	}
 	
-	public void add(T t) {
+	public void add(int i) {
 		if(head == null) {
-			head = new Node(t);
+			head = new Node(i);
 		}
 		else {
 			// reach last position in list (node.next = null)
@@ -26,12 +24,21 @@ public class LinkedList<T> {
 				n = n.next;
 			}
 			
-			n.next = new Node(t);
+			n.next = new Node(i);
 		}
-		size++;
 	}
 	
+	// we are going for this inefficient size method so we don't have to update a size variable
+	// which becomes trivial when we start removing elements from outside this class (e.g. removeDups)
 	public int size() {
+		int size = 0;
+		Node n = head;
+		
+		while(n != null) {
+			size++;
+			n = n.next;
+		}
+		
 		return size;
 	}
 	
@@ -65,10 +72,10 @@ public class LinkedList<T> {
 	
 	class Node {
 		Node next = null;
-		T data;
+		int data;
 		
-		public Node(T t) {
-			data = t;
+		public Node(int i) {
+			data = i;
 		}
 	}
 }

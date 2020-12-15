@@ -9,7 +9,7 @@ import main.LinkedList;
 import main.LinkedListProblemSet;
 
 public class LinkedListProblemSetTest {
-	LinkedList<Integer> ll;
+	LinkedList ll;
 	LinkedListProblemSet pset;
 	
 	@Before
@@ -18,7 +18,7 @@ public class LinkedListProblemSetTest {
 	
 	@Test
 	public void removeDupsTest() {
-		LinkedList<Integer> ll = new LinkedList<Integer>();
+		LinkedList ll = new LinkedList();
 		
 		LinkedListProblemSet.removeDups(ll.head);
 		assertEquals("", ll.toString());
@@ -33,6 +33,12 @@ public class LinkedListProblemSetTest {
 		
 		LinkedListProblemSet.removeDups(ll.head);
 		assertEquals("1 -> 2 -> 3 -> 4", ll.toString());
+	}
+	
+	@Test
+	public void kthToLastTest() {
+		LinkedList ll = new LinkedList();
+		
 	}
 
 }

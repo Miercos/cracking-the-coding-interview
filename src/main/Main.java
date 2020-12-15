@@ -3,7 +3,7 @@ package main;
 public class Main {
 
 	public static void main(String[] args) {
-		LinkedList<Integer> ll = new LinkedList<Integer>();
+		LinkedList ll = new LinkedList();
 		ll.print();
 		ll.add(1);
 		ll.add(1);
@@ -20,9 +20,11 @@ public class Main {
 		
 		ll.print();
 		
-		LinkedListProblemSet.removeDupsRevised(ll.head);
-		
+		LinkedListProblemSet.removeDups(ll.head);
+
 		ll.print();
+		
+		
 		
 		//System.out.println(LinkedListProblemSet.kthToLast(ll.head, ll.size(), 2));
 	}
