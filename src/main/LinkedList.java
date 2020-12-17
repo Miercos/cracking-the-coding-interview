@@ -28,6 +28,16 @@ public class LinkedList{
 		}
 	}
 	
+	public void addFirst(int i) {
+		Node temp = head;
+		head = new Node(i);
+		head.next = temp;
+	}
+	
+	public void setHead(Node n) {
+		head = n;
+	}
+	
 	// we are going for this inefficient size method so we don't have to update a size variable
 	// which becomes trivial when we start removing elements from outside this class (e.g. removeDups)
 	public int size() {
