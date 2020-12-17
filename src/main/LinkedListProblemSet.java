@@ -19,12 +19,47 @@ public class LinkedListProblemSet {
 		}
 	}
 	
-	// are we given access to the length of the list?
-	public static int kthToLast(Node head, int size, int k){
+	// we are implementing this without size for more of a challenge
+	// for more of a challenge, try recursion 
+	public static int kthToLast(Node head, int k){
+		// we don't have to worry about losing head bc head will be unchanged anyways?
 		Node n = head;
-		for(int i = 1; i < size - k; i++) {
+		Node runner = head;
+		int i = 0;
+		
+		while(runner != null) {
+			if(i >= k)
+				n = n.next;
+			runner = runner.next;
+			i++;
+		}
+		
+		return n.data;
+	}
+	
+	// not going to lie, I thought this problem was impossible until I saw the hint
+	public static void deleteMiddleNode(Node n) {
+		while(n != null) {
+			n.data = n.next.data;
 			n = n.next;
 		}
-		return n.data;
+	}
+	
+	// I really like this implementation
+	// it's elegant, efficient, but requires some additional functionality from our LinkedList class
+	// interestingly, it doesn't work if you try to change head or n directly, you have to return it to change it
+	// I'm guessing it's because Java passes by value 
+	public static Node partition(Node n, int p) {
+		LinkedList ll = new LinkedList();
+		
+		while(n != null) {
+			if(n.data < p)
+				ll.addFirst(n.data);
+			else
+				ll.add(n.data);
+			n = n.next;
+		}
+		
+		return ll.head;
 	}
 }
