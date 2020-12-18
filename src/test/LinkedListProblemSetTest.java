@@ -61,11 +61,7 @@ public class LinkedListProblemSetTest {
 		ll.add(3);
 		ll.add(4);
 		
-		//Node n = null;
-		// best way to get a certain node?
-		for(int i = 0; i < 1; i++) {
-			
-		}
+		// we might have to add a method to get a node to test this one
 	}
 	
 	@Test
@@ -103,6 +99,9 @@ public class LinkedListProblemSetTest {
 	
 	@Test
 	public void isPalindromeTest() {
+		LinkedList ll = new LinkedList();
+		assertEquals(false, LinkedListProblemSet.isPalindrome(ll.head));	
+		
 		LinkedList l1 = new LinkedList();
 		l1.add(1);
 		l1.add(2);
