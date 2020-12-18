@@ -79,17 +79,47 @@ public class LinkedListProblemSetTest {
 		ll.add(2);
 		ll.add(1);
 		ll.head = LinkedListProblemSet.partition(ll.head, 5);		
-		assertEquals("3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10", ll.toString());
-		
-		ll = new LinkedList();
-		ll.add(3);
-		ll.add(5);
-		ll.add(8);
-		ll.add(5);
-		ll.add(10);
-		ll.add(2);
-		ll.add(1);
-		ll.head = LinkedListProblemSet.partitionAlternate(ll.head, 5);		
 		assertEquals("1 -> 2 -> 3 -> 5 -> 8 -> 5 -> 10", ll.toString());
+	}
+	
+	@Test
+	public void sumListsTest() {
+		LinkedList l1 = new LinkedList();
+		l1.add(9);
+		l1.add(7);
+		l1.add(8);
+
+		LinkedList l2 = new LinkedList();
+		l2.add(6);
+		l2.add(8);
+		l2.add(5);
+		
+		LinkedList ll = new LinkedList();
+		ll.head = LinkedListProblemSet.sumLists(l1.head, l2.head);
+		ll.print();
+		
+		assertEquals("5 -> 6 -> 4 -> 1", ll.toString());
+	}
+	
+	@Test
+	public void isPalindromeTest() {
+		LinkedList l1 = new LinkedList();
+		l1.add(1);
+		l1.add(2);
+		l1.add(3);
+		l1.add(4);
+		l1.add(3);
+		l1.add(2);
+		l1.add(1);
+		assertEquals(true, LinkedListProblemSet.isPalindrome(l1.head));
+		
+		LinkedList l2 = new LinkedList();
+		l2.add(1);
+		l2.add(2);
+		l2.add(3);
+		l2.add(4);
+		l2.add(3);
+		l2.add(2);
+		assertEquals(false, LinkedListProblemSet.isPalindrome(l2.head));	
 	}
 }
